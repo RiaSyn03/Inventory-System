@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Inventory System</title>
+</head>
+<style>
+    .tabbed {
+  width: 1090px;
+  margin: 50px auto;
+}
+
+.tabbed > input {
+
+  display: none;
+}
+
+.tabbed > label {
+  display: block;
+  color: #fff ;
+  font-weight: 600;
+  font-size: 1em;
+  text-transform: uppercase;
+  float: left;
+  padding: 12px 20px;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: background-color .3s;
+}
+
+.tabbed > label:hover,
+.tabbed > input:checked + label {
+  background: #ff4584;
+}
+
+.tabs {
+  clear: both;
+  perspective: 600px;
+}
+
+.tabs > div {
+  width: 1100px;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.658);
+  border-radius: 20px;
+  box-shadow: 10px 5px 20px #3caadc;
+  padding: 10px 30px 40px;
+  line-height: 1.4em;
+  opacity: 0;
+  transform: rotateX(-20deg);
+  transform-origin: top center;
+  transition: opacity .3s, transform 1s;
+  z-index: 0;
+}
+
+#tab-nav-1:checked ~ .tabs > div:nth-of-type(1),
+#tab-nav-2:checked ~ .tabs > div:nth-of-type(2),
+#tab-nav-3:checked ~ .tabs > div:nth-of-type(3),
+#tab-nav-4:checked ~ .tabs > div:nth-of-type(4){
+  transform: rotateX(0);
+  opacity: 1;
+  z-index: 1;
+}
+
+@media screen and (max-width: 700px) {
+  .tabbed { width: 400px }
+  .tabbed > label { display: none }
+  .tabs > div {
+    width: 400px;
+    border: none;
+    padding: 0;
+    opacity: 1;
+    position: relative;
+    transform: none;
+    margin-bottom: 60px;
+  }
+  .tabs > div h2 {
+    border-bottom: 2px solid #4EC6DE;
+    padding-bottom: .5em;
+  }
+}
+.bg-gradient {
+        background: linear-gradient(to right, cyan, blue);
+    }
+</style>
+<body class="bg-gradient">
+    <div class="tabbed">
+        <input type="radio" name="tabs" id="tab-nav-1" checked>
+        <label for="tab-nav-1">San Miguel</label>
+        <input type="radio" name="tabs" id="tab-nav-2">
+        <label for="tab-nav-2">Red Horse</label>
+        <input type="radio" name="tabs" id="tab-nav-3">
+        <label for="tab-nav-3">Gold Eagle</label>
+        <input type="radio" name="tabs" id="tab-nav-4">
+        <label for="tab-nav-4">Beer Na Beer</label>
+        <div class="tabs">
+          <div>
+            <div style="display: flex; justify-content: space-around; align-items: center;" class="box-border border-4 rounded-md m-2">
+              <span>
+              <div class="h-24 w-24 p-2">
+                <div 
+                style="
+                width: 32px;
+                height: 70px; /* Adjust the height to maintain the aspect ratio */
+                background-image: url('../Pictures/san_mig500ML.png');
+                background-size: contain; /* Use 'contain' to fit the entire image within the div */
+                background-repeat: no-repeat;
+                ">
+                </div>
+              </div>
+              </span>
+              <h3>San Miguel (500 ml)</h3>
+              <h3>Stock:</h3>
+              <h3>Price:</h3>
+            </div>
+            <div style="display: flex; justify-content: space-around; align-items: center;" class="box-border border-4 rounded-md m-2">
+              <span>
+              <div class="h-24 w-24 p-2">
+                <div 
+                style="
+                width: 68px;
+                height: 68px; /* Adjust the height to maintain the aspect ratio */
+                background-image: url('../Pictures/san_mig1L.png');
+                background-size: contain; /* Use 'contain' to fit the entire image within the div */
+                background-repeat: no-repeat;
+                " alt="Transparent PNG">
+                </div>
+              </div>
+              </span>
+              <h3>San Miguel Grande (1 Liter)</h3>
+              <h3>Stock:</h3>
+              <h3>Price:</h3>
+            </div>
+          </div>
+          <div>
+            <div style="display: flex; justify-content: space-around; align-items: center;" class="box-border border-4 rounded-md m-2">
+              <span>
+              <div class="h-24 w-24 p-2">
+                <div 
+                style="width: 32px;
+                color: f0f0f0;
+                height: 32px;
+                background-image: url('../Icons/beer.png');
+                background-size: cover;" alt="Transparent GIF">
+                </div>
+              </div>
+              </span>
+              <h3>Red Horse (250 ml)</h3>
+              <h3>Stock:</h3>
+              <h3>Price:</h3>
+            </div>
+            <div style="display: flex; justify-content: space-around; align-items: center;" class="box-border border-4 rounded-md m-2">
+              <span>
+              <div class="h-24 w-24 p-2">
+                <div 
+                style="width: 32px;
+                color: f0f0f0;
+                height: 32px;
+                background-image: url('../Icons/beer.png');
+                background-size: cover;" alt="Transparent GIF">
+                </div>
+              </div>
+              </span>
+              <h3>Red Horse (500 ml)</h3>
+              <h3>Stock:</h3>
+              <h3>Price:</h3>
+            </div>
+            <div style="display: flex; justify-content: space-around; align-items: center;" class="box-border border-4 rounded-md m-2">
+              <span>
+              <div class="h-24 w-24 p-2">
+                <div 
+                style="width: 32px;
+                color: f0f0f0;
+                height: 32px;
+                background-image: url('../Icons/beer.png');
+                background-size: cover;" alt="Transparent GIF">
+                </div>
+              </div>
+              </span>
+              <h3>Red Horse (1 Liter)</h3>
+              <h3>Stock:</h3>
+              <h3>Price:</h3>
+            </div>
+          </div>
+          <div>
+            <h2>Tab 3 Sample</h2>
+          </div>
+          <div>
+            <h2>Tab 4 Sample</h2>
+          </div>
+        </div>
+    </div>
+    
+</body>
+</html>
